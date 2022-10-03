@@ -35,7 +35,7 @@ export async function upload(req: Request, res: Response) {
 export async function getFileOrDir(req: Request, res: Response) {
   const { dirPath, filename } = req.body;
   const __dirname = path.resolve();
-  if (!dirPath && !filename) res.send(fs.readdirSync(__dirname + "/files"));
+  if (!dirPath && !filename) res.send({ folder: fs.readdirSync(__dirname + "/files") });
   else if (dirPath && filename) {
     const dir = path.join(__dirname, `/files/${dirPath}/${filename}`);
     if (!fs.existsSync(dir)) {
@@ -47,7 +47,7 @@ export async function getFileOrDir(req: Request, res: Response) {
     if (!fs.existsSync(dir)) {
       throw notFoundError("Path not found!");
     }
-    res.send(fs.readdirSync(dir));
+    res.send({ folder: fs.readdirSync(dir) });
   } else if (filename) {
     const dir = path.join(__dirname, `/files/${filename}`);
     if (!fs.existsSync(dir)) {
