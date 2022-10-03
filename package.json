@@ -1,0 +1,39 @@
+{
+  "name": "simplefileservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "test": "jest -i"
+  },
+  "keywords": [],
+  "author": "Allan Ornel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/express-fileupload": "^1.4.1",
+    "@types/jest": "^29.1.1",
+    "@types/node": "^18.7.23",
+    "@types/supertest": "^2.0.12",
+    "cross-env": "^7.0.3",
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.2.4",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
